@@ -18,7 +18,7 @@ const Login = () => {
     // const navigate = useNavigate();
     // const from = location.state?.from?.pathname || '/';
 
-    // UseTitle('Login');
+    UseTitle('Login');
 
     const handleLogin = (event) => {
         event.preventDefault();
