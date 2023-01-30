@@ -1,6 +1,7 @@
-import Blog from "../pages/Blog";
+import Blog from "../pages/blog/Blog";
 import Home from "../pages/Home";
-import Services from "../pages/Services";
+import Services from "../pages/services/Services";
+
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../layout/Main");

@@ -1,11 +1,9 @@
 import React from 'react';
 import heroImg from '../assets/Executive-Health-Check-Up-2.jpg'
 
-
-const Slider = () => {
+const Banner = () => {
     return (
-        <div>
-            <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row">
     <img alt='' src={heroImg} className="w-full rounded-lg" />
     <div>
@@ -15,9 +13,7 @@ const Slider = () => {
     </div>
   </div>
 </div>
-
-        </div>
     );
 };
 
-export default Slider;
+export default Banner;
