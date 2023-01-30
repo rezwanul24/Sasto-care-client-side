@@ -1,8 +1,145 @@
-import React from 'react';
-import loginImg from '../../assets/login (2).jpg';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { AuthContext } from '../../context/AuthProvider';
+import { toast } from 'react-toastify';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import loginImg from '../../assets/login_2.jpg';
+import UseTitle from '../../hooks/UseTitle';
 
 const Login = () => {
+    const [error, setError] = useState('');
+
+    const { signInWithEmail, providerLogin } = useContext(AuthContext);
+
+    const [loading,setLoading] = useState(false);
+
+    // const location = useLocation();
+    // const navigate = useNavigate();
+    // const from = location.state?.from?.pathname || '/';
+
+    // UseTitle('Login');
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        setLoading(true);
+
+        signInWithEmail(email, password)
+            .then(result => {
+                const user = result.user;
+
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                console.log(currentUser);
+
+                // // get jwt token
+                // fetch('https://y-plum-zeta.vercel.app/jwt', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(currentUser)
+                // })
+                //     .then(res => res.json())
+                //     .then(data => {
+                //         console.log(data);
+                //         setLoading(false);
+                //         setError('');
+                //         toast.success("login Successfully");
+                //         localStorage.setItem('token', data.token);
+                //         navigate(from, { replace: true });
+                //     });
+
+            })
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+                setLoading(false);
+            })
+
+
+    }
+
+    const googleProvider = new GoogleAuthProvider();
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                console.log(currentUser);
+
+                // // get jwt token
+                // fetch('https://y-plum-zeta.vercel.app/jwt', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(currentUser)
+                // })
+                //     .then(res => res.json())
+                //     .then(data => {
+                //         console.log(data);
+                //         toast.success("login Successfully");
+                //         localStorage.setItem('token', data.token);
+                //         navigate(from, { replace: true });
+                //     });
+
+            })
+            .catch(error => {
+                console.error('error: ', error);
+                setError(error.message);
+            })
+    }
+
+    const gitHubProvider = new GithubAuthProvider()
+    const handleGithubSignIn = () => {
+        providerLogin(gitHubProvider)
+            .then(result => {
+                const user = result.user;
+
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                console.log(currentUser);
+
+                // // get jwt token
+                // fetch('https://y-plum-zeta.vercel.app/jwt', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(currentUser)
+                // })
+                //     .then(res => res.json())
+                //     .then(data => {
+                //         console.log(data);
+                //         setError('');
+                //         toast.success("login Successfully");
+                //         localStorage.setItem('token', data.token);
+                //         navigate(from, { replace: true });
+                //     });
+
+            })
+            .catch(error => {
+                console.error('error: ', error);
+                setError(error.message);
+            })
+    }
+
     return (
         <div className="flex min-h-screen bg-base-200 justify-center items-center">
 
@@ -55,7 +192,12 @@ const Login = () => {
                                     </label>
 
                                 </div>
-                                
+                                {
+                                    error && <p className='text-red-500'>{error}</p>
+                                }
+                                {
+                                    loading && <span className="loader"></span>
+                                }
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary">Login</button>
                                 </div>
