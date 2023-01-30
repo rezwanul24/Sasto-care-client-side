@@ -213,7 +213,7 @@ const Login = () => {
                                     <FaGoogle className=' text-4xl hover:text-primary ' />
                                 </button>
 
-                                <button
+                                <button disabled
                                     onClick={handleGithubSignIn}
                                     className="">
                                     <FaGithub className=' text-4xl hover:text-primary' />

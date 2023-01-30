@@ -35,7 +35,7 @@ const Header = () => {
           {/* logo  */}
           <Link to='/' className="btn btn-ghost normal-case text-xl">
               <img className='w-8 ' src={logo} alt="" />
-              <h1>Health <span className='text-primary'>Care</span></h1>
+              <h1>SastoCare</h1>
           </Link>
       </div>
 
@@ -52,7 +52,7 @@ const Header = () => {
                   </>
 
               }
-              <li><Link to='/blogs' >Blogs</Link></li>
+              <li><Link to='/blog' >Blog</Link></li>
           </ul>
       </div>
 

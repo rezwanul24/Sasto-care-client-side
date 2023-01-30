@@ -1,7 +1,9 @@
+import AddService from "../pages/addService/AddService";
 import Blog from "../pages/blog/Blog";
 import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
+import Reviews from "../pages/review/Reviews";
 import Services from "../pages/services/Services";
 
 
@@ -15,6 +17,10 @@ export const route = createBrowserRouter([
         children: [
             {
                 path: '/',
+                element: <Home></Home>
+            },
+            {
+                path: '/home',
                 element: <Home></Home>
             },
             
@@ -33,6 +39,14 @@ export const route = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/addServices',
+                element: <AddService></AddService>
+            },
+            {
+                path: '/reviews',
+                element: <Reviews></Reviews>
             },
 
         ]
