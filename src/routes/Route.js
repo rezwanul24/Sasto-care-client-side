@@ -1,5 +1,7 @@
 import Blog from "../pages/blog/Blog";
-import Home from "../pages/Home";
+import Home from "../pages/home/Home";
+import Login from "../pages/login/Login";
+import Register from "../pages/register/Register";
 import Services from "../pages/services/Services";
 
 
@@ -23,6 +25,14 @@ export const route = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             },
 
         ]

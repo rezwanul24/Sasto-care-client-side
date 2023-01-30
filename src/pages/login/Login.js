@@ -14,9 +14,9 @@ const Login = () => {
 
     const [loading,setLoading] = useState(false);
 
-    // const location = useLocation();
-    // const navigate = useNavigate();
-    // const from = location.state?.from?.pathname || '/';
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
 
     UseTitle('Login');
 
@@ -187,7 +187,7 @@ const Login = () => {
                                     <label className="label">
                                         <span>
                                             Don't have any account?
-                                            <Link to='/signup' className="text-blue-500 link link-hover ml-1">Register Now</Link>
+                                            <Link to='/register' className="text-blue-500 link link-hover ml-1">Register Now</Link>
                                         </span>
                                     </label>
 
