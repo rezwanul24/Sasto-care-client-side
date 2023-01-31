@@ -20,7 +20,7 @@ const Service = () => {
 
     const getReviewsData = () => {
         setLoading(true);
-        fetch(`http://localhost:5000/service/${id}`)
+        fetch(`https://sasto-care-server-side.vercel.app/service/${id}`)
             .then(res => res.json())
             .then(data => {
                 setServiceData(data);
@@ -28,7 +28,7 @@ const Service = () => {
                 if (data._id) {
                     console.log(data);
 
-                    fetch(`http://localhost:5000/reviews?id=${data.service_id}`)
+                    fetch(`https://sasto-care-server-side.vercel.app/reviews?id=${data.service_id}`)
                         .then(res => res.json())
                         .then(revData => {
                             setReviewsData(revData);
@@ -63,7 +63,7 @@ const Service = () => {
             date: new Date().toISOString(),
         };
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://sasto-care-server-side.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

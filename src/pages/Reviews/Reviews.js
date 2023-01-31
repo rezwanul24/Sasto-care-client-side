@@ -13,7 +13,7 @@ const Reviews = () => {
 
     const getReviews = () => {
         setLoading(true);
-        fetch(`http://localhost:5000/myReviews?email=${user?.email}`, {
+        fetch(`https://sasto-care-server-side.vercel.app/myReviews?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`

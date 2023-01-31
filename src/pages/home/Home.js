@@ -17,7 +17,7 @@ const Home = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch('http://localhost:5000/homeServices?size=3')
+        fetch('https://sasto-care-server-side.vercel.app/homeServices?size=3')
             .then(res => res.json())
             .then(data => {
                 setServicesData(data);

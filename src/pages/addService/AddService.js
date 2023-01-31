@@ -11,7 +11,7 @@ const AddService = () => {
     const [ratingInput, setRatingInput] = useState(5);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://sasto-care-server-side.vercel.app/services')
             .then(res => res.json())
             .then(data => {
                 setServiceData(data);
@@ -38,7 +38,7 @@ const AddService = () => {
         console.log(updateData);
 
         
-        fetch('http://localhost:5000/service', {
+        fetch('https://sasto-care-server-side.vercel.app/service', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
