@@ -13,7 +13,7 @@ const Reviews = () => {
 
     const getReviews = () => {
         setLoading(true);
-        fetch(`https://y-plum-zeta.vercel.app/myReviews?email=${user?.email}`, {
+        fetch(`http://localhost:5000/myReviews?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`

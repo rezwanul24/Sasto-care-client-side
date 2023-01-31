@@ -20,7 +20,7 @@ const Service = () => {
 
     const getReviewsData = () => {
         setLoading(true);
-        fetch(`https://y-plum-zeta.vercel.app/service/${id}`)
+        fetch(`http://localhost:5000/service/${id}`)
             .then(res => res.json())
             .then(data => {
                 setServiceData(data);
@@ -28,7 +28,7 @@ const Service = () => {
                 if (data._id) {
                     console.log(data);
 
-                    fetch(`https://y-plum-zeta.vercel.app/reviews?id=${data.service_id}`)
+                    fetch(`http://localhost:5000/reviews?id=${data.service_id}`)
                         .then(res => res.json())
                         .then(revData => {
                             setReviewsData(revData);
@@ -63,7 +63,7 @@ const Service = () => {
             date: new Date().toISOString(),
         };
 
-        fetch('https://y-plum-zeta.vercel.app/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

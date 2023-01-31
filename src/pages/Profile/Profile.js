@@ -12,7 +12,7 @@ const Profile = () => {
     const [reviewsData, setReviewsData] = useState([]);
 
     const getServicesData = () => {
-        fetch('https://y-plum-zeta.vercel.app/services')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => {
                 setServiceData(data);
@@ -21,7 +21,7 @@ const Profile = () => {
 
     const getReviewsData = () => {
         if (user?.email) {
-            fetch(`https://y-plum-zeta.vercel.app/myReviews?email=${user?.email}`, {
+            fetch(`http://localhost:5000/myReviews?email=${user?.email}`, {
                 method: 'GET',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('token')}`

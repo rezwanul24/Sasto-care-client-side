@@ -13,7 +13,7 @@ const Services = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch('https://y-plum-zeta.vercel.app/services')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => {
                 setServicesData(data);

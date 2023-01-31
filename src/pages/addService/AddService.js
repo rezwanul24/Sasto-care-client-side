@@ -11,7 +11,7 @@ const AddService = () => {
     const [ratingInput, setRatingInput] = useState(5);
 
     useEffect(() => {
-        fetch('https://y-plum-zeta.vercel.app/services')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => {
                 setServiceData(data);
@@ -38,7 +38,7 @@ const AddService = () => {
         console.log(updateData);
 
         
-        fetch('https://y-plum-zeta.vercel.app/service', {
+        fetch('http://localhost:5000/service', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

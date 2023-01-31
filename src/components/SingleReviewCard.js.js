@@ -11,7 +11,7 @@ const SingleReviewCard = ({ review, getReviews }) => {
     const handleDeleteReview = (id) => {
         console.log('delete id:', id);
 
-        fetch(`https://y-plum-zeta.vercel.app/review/${id}`, {
+        fetch(`http://localhost:5000/review/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
@@ -34,7 +34,7 @@ const SingleReviewCard = ({ review, getReviews }) => {
             rating: parseInt(ratingInput)
         };
 
-        fetch(`https://y-plum-zeta.vercel.app/review/${_id}`, {
+        fetch(`http://localhost:5000/review/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
