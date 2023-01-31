@@ -4,7 +4,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-toastify';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import loginImg from '../../assets/login_2.jpg';
+import loginImg from '../../assets/login.jpg';
 import UseTitle from '../../hooks/UseTitle';
 
 const Login = () => {
@@ -39,23 +39,23 @@ const Login = () => {
 
                 console.log(currentUser);
 
-                // // get jwt token
-                // fetch('https://y-plum-zeta.vercel.app/jwt', {
-                //     method: 'POST',
-                //     headers: {
-                //         'content-type': 'application/json'
-                //     },
-                //     body: JSON.stringify(currentUser)
-                // })
-                //     .then(res => res.json())
-                //     .then(data => {
-                //         console.log(data);
-                //         setLoading(false);
-                //         setError('');
-                //         toast.success("login Successfully");
-                //         localStorage.setItem('token', data.token);
-                //         navigate(from, { replace: true });
-                //     });
+                // get jwt token
+                fetch('https://y-plum-zeta.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        setLoading(false);
+                        setError('');
+                        toast.success("login Successfully");
+                        localStorage.setItem('token', data.token);
+                        navigate(from, { replace: true });
+                    });
 
             })
             .catch(error => {
@@ -80,21 +80,21 @@ const Login = () => {
 
                 console.log(currentUser);
 
-                // // get jwt token
-                // fetch('https://y-plum-zeta.vercel.app/jwt', {
-                //     method: 'POST',
-                //     headers: {
-                //         'content-type': 'application/json'
-                //     },
-                //     body: JSON.stringify(currentUser)
-                // })
-                //     .then(res => res.json())
-                //     .then(data => {
-                //         console.log(data);
-                //         toast.success("login Successfully");
-                //         localStorage.setItem('token', data.token);
-                //         navigate(from, { replace: true });
-                //     });
+                // get jwt token
+                fetch('https://y-plum-zeta.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        toast.success("login Successfully");
+                        localStorage.setItem('token', data.token);
+                        navigate(from, { replace: true });
+                    });
 
             })
             .catch(error => {
@@ -116,22 +116,22 @@ const Login = () => {
 
                 console.log(currentUser);
 
-                // // get jwt token
-                // fetch('https://y-plum-zeta.vercel.app/jwt', {
-                //     method: 'POST',
-                //     headers: {
-                //         'content-type': 'application/json'
-                //     },
-                //     body: JSON.stringify(currentUser)
-                // })
-                //     .then(res => res.json())
-                //     .then(data => {
-                //         console.log(data);
-                //         setError('');
-                //         toast.success("login Successfully");
-                //         localStorage.setItem('token', data.token);
-                //         navigate(from, { replace: true });
-                //     });
+                // get jwt token
+                fetch('https://y-plum-zeta.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        setError('');
+                        toast.success("login Successfully");
+                        localStorage.setItem('token', data.token);
+                        navigate(from, { replace: true });
+                    });
 
             })
             .catch(error => {
@@ -187,7 +187,7 @@ const Login = () => {
                                     <label className="label">
                                         <span>
                                             Don't have any account?
-                                            <Link to='/register' className="text-blue-500 link link-hover ml-1">Register Now</Link>
+                                            <Link to='/signup' className="text-blue-500 link link-hover ml-1">Register Now</Link>
                                         </span>
                                     </label>
 
@@ -213,7 +213,7 @@ const Login = () => {
                                     <FaGoogle className=' text-4xl hover:text-primary ' />
                                 </button>
 
-                                <button disabled
+                                <button
                                     onClick={handleGithubSignIn}
                                     className="">
                                     <FaGithub className=' text-4xl hover:text-primary' />
