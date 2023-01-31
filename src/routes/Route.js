@@ -1,19 +1,26 @@
-import AddService from "../pages/addService/AddService";
-import Blog from "../pages/blog/Blog";
-import Home from "../pages/home/Home";
-import Login from "../pages/login/Login";
-import Register from "../pages/register/Register";
-import Reviews from "../pages/review/Reviews";
-import Services from "../pages/services/Services";
+import Main from "../layout/Main";
+import AddService from "../pages/AddService/AddService";
+import Blogs from "../pages/Blogs/Blogs";
+import Home from "../pages/Home/Home";
+import Login from "../pages/Login/Login";
+import NotFound from "../pages/NotFound/NotFound";
+import Profile from "../pages/Profile/Profile";
+import Reviews from "../pages/Reviews/Reviews";
+import Service from "../pages/Service/Service";
+
+import Services from "../pages/Services/Services";
+import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 
 const { createBrowserRouter } = require("react-router-dom");
-const { default: Main } = require("../layout/Main");
 
-export const route = createBrowserRouter([
+
+
+export const router = createBrowserRouter([
     {
-        path: '/', 
-        element:<Main></Main>,
+        path: '/',
+        element: <Main></Main>,
         children: [
             {
                 path: '/',
@@ -23,32 +30,40 @@ export const route = createBrowserRouter([
                 path: '/home',
                 element: <Home></Home>
             },
-            
             {
-                path: '/blog',
-                element: <Blog></Blog>
+                path: '/blogs',
+                element: <Blogs></Blogs>
             },
             {
                 path: '/services',
                 element: <Services></Services>
             },
             {
+                path: '/service/:id',
+                element: <Service />
+            },
+            {
+                path: '/signup',
+                element: <SignUp />
+            },
+            {
                 path: '/login',
-                element: <Login></Login>
+                element: <Login />
             },
             {
-                path: '/register',
-                element: <Register></Register>
-            },
-            {
-                path: '/addServices',
-                element: <AddService></AddService>
+                path: '/profile',
+                element: <Profile />
             },
             {
                 path: '/reviews',
-                element: <Reviews></Reviews>
+                element: <PrivateRoute><Reviews /></PrivateRoute>
             },
+            {
+                path: '/addServices',
+                element: <PrivateRoute><AddService /></PrivateRoute>
+            }
 
         ]
-    }
+    },
+    { path: '*', element: <NotFound></NotFound> }
 ])
