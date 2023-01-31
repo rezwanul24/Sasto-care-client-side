@@ -5,7 +5,7 @@ import './Loader.css'
 const Loader = () => {
     return (
         <div className='min-h-[60vh] flex justify-center items-center'>
-            <span class="loader"></span>
+            <div classname="lds-ripple"><div></div><div></div></div>
         </div>
     );
 };

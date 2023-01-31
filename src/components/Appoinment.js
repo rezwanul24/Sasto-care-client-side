@@ -1,14 +1,12 @@
 import React from 'react';
-import mobile from '../assets/mobile.png'
-import women from '../assets/women.png'
 const Appoinment = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content grid grid-cols-12">
-                <div className="text-center col-span-12 lg:col-span-7 ">
+                <div className="text-center col-span-10 lg:col-span-7 ">
                     <div className=' relative '>
-                        <img src={mobile} alt="" />
-                        <img className='w-6/12 absolute bottom-0 right-0 ' src={women} alt="" />
+                        <img className='w-full' src='https://cdn.dribbble.com/users/508588/screenshots/15599859/media/121051a77b708d29d52deedbc00d969e.jpg' alt="" />
+                        
                     </div>
                 </div>
                 <div className=' col-span-12 lg:col-span-5 '>

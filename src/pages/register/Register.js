@@ -147,7 +147,7 @@ const Register = () => {
 
                                 </div>
                                 {
-                                    loading && <span class="loader"></span>
+                                    loading && <span classname="loader"></span>
                                 }
                                 {
                                     error && <p className='text-red-500'>{error}</p>

@@ -4,7 +4,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-toastify';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import loginImg from '../../assets/login.jpg';
+import loginImg from '../../assets/login_2.jpg';
 import UseTitle from '../../hooks/UseTitle';
 
 const Login = () => {
@@ -213,7 +213,7 @@ const Login = () => {
                                     <FaGoogle className=' text-4xl hover:text-primary ' />
                                 </button>
 
-                                <button
+                                <button disabled
                                     onClick={handleGithubSignIn}
                                     className="">
                                     <FaGithub className=' text-4xl hover:text-primary' />

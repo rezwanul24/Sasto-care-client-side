@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import HeadTitle from '../HeadTitle';
 import './Review.css';
 const Review = () => {
@@ -6,26 +7,21 @@ const Review = () => {
         <div>
             <HeadTitle
                 title='Reviews'
-                comment='See What Are The Patients
-            Saying About me'
+                
             />
 
-            <div className="flex">
-                <div className="comments">
-                    Rezwanul is a best doctor in my life ever. She is careful.
-                </div>
-                <div className="profile">
-                    <div className="avatar">
-                        <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img src="https://i.pinimg.com/originals/47/b1/47/47b147b6d88fea4bcd32344251784b24.jpghttps://srv.carbonads.net/ads/click/x/GTND42JUCWYIP23LCVSLYKQNCABIKK37CT7I6Z3JCYSIV2QYFTYDCK7KCABDE2JUFTAICK7JCYAI5KJUFTYDP53KC6SD52QJCEBDEK3EHJNCLSIZ?segment=placement:daisyuicom" alt='' />
-                        </div>
-                    </div>
+<div className="hero min-h-screen bg-base-200">
+  <div className="hero-content flex-col lg:flex-row">
+    <img src="https://cdni.iconscout.com/illustration/premium/thumb/doctor-giving-advice-to-patient-2527798-2117453.png" />
+    <div>
+      <h3 className="text-5xl font-bold">Rezwanul Haque</h3>
+      <p className="py-6">He is careful and dedicated for his work. He is very good. You can helpful form here</p>
+      <button className="btn btn-primary"><Link to="/services">Servecis</Link></button>
+    </div>
+  </div>
+</div>
 
-                    
-                    <a href="#"></a>
-                    <span>Rezwanul Haque</span>
-                </div>
-            </div>
+            
 
             
         </div>

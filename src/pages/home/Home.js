@@ -39,9 +39,9 @@ const Home = () => {
 
                             <div className='col-span-8 lg:col-span-2 lg:text-left'>
                                 <span className=' text-primary font-semibold text-4xl border-b-2 border-primary '>Services</span>
-                                <p className='text-2xl font-semibold my-5'>I provide the special tips and advice’s of heath care treatment and high level of best.</p>
+                                <p className='text-2xl font-semibold my-5'>Here are some treatment for your. you can choose one</p>
 
-                                <Link to='/services' className='btn btn-primary'>All Services</Link>
+                                <Link to='/services' className='btn btn-primary'>See More</Link>
                             </div>
 
 

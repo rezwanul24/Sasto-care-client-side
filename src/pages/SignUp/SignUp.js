@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-toastify';
-import loginImg from '../../assets/login.jpg';
+import loginImg from '../../assets/login_2.jpg';
 import UseTitle from '../../hooks/UseTitle';
 
 const SignUp = () => {
@@ -147,7 +147,7 @@ const SignUp = () => {
 
                                 </div>
                                 {
-                                    loading && <span class="loader"></span>
+                                    loading && <span className="loader"></span>
                                 }
                                 {
                                     error && <p className='text-red-500'>{error}</p>

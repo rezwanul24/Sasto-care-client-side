@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { FiLogIn, FiLogOut } from 'react-icons/fi'
 import { AuthContext } from '../../context/AuthProvider';
 import logo from '../../assets/logo.png';
 
@@ -73,13 +72,13 @@ const Header = () => {
                                         onClick={() => providerLogOut()}
                                     >
                                         Logout
-                                        <FiLogOut className='ml-2' />
+                                        
                                     </p>
                                 </li>
                             </ul>
                         </div>
                         :
-                        <Link to='/login' className="btn">Login <FiLogIn className='ml-2' /></Link>
+                        <Link to='/login' className="btn">Login</Link>
                 }
             </div>
         </div>
